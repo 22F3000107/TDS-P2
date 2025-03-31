@@ -1,0 +1,76 @@
+
+
+// GA_1 question 1:
+
+// curl -X POST "http://localhost:8000/api/" \
+// >   -H "Content-Type: multipart/form-data" \
+// >   -F "question=Install and run Visual Studio Code. In your Terminal (or Command Prompt), type code -s and press Enter. Copy and paste the entire output below. What is the output of code -s?"
+ {
+    "answer":"Version:          Code 1.96.4 (cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba, 
+    2025-01-16T00:16:19.038Z)\nOS Version:       Darwin arm64 24.2.0\nCPUs:             
+    Apple M1 (8 x 2400)\nMemory (System):  8.00GB (0.10GB free)\nLoad (avg):      
+     2, 2, 2\nVM:               0%\nScreen Reader:    no\nProcess Argv:    
+      --crash-reporter-id 95a0ba4e-514a-41c4-8a7a-5bcc0de82512\nGPU Status:      
+       2d_canvas:                              enabled\n                  canvas_oop_rasterization:               enabled_on\n                  direct_rendering_display_compositor:   
+        disabled_off_ok\n                  gpu_compositing:                        enabled\n                  multiple_raster_threads:                enabled_on\n                  opengl:                                 enabled_on\n                  rasterization:                          enabled\n                  raw_draw:                               disabled_off_ok\n                  skia_graphite:                          disabled_off\n                  video_decode:                           enabled\n                  video_encode:                           enabled\n                  webgl:                                  enabled\n                  webgl2:                                 enabled\n                  webgpu:                                 enabled\n                  webnn:                                  disabled_off\n\nCPU %   Mem MB     PID  Process\n    0      172    2624  code main\n    0       74    2627     gpu-process\n    0       33    2628     utility-network-service\n    0      115    2633  shared-process\n    0       57    2709  ptyHost\n    0        0    2767       /bin/zsh -il\n    0        0    2813         bash /usr/local/bin/code -s\n   11       57    2822           electron-nodejs (cli.js )\n    1      213    2748  window [2] (Welcome)\n    0       49    2749  fileWatcher [2]\n    0      336    2750  extensionHost [2]\n\n\nWorkspace Stats: \n|  Window (binaryResearch.py — vscodeScripts)\n|    Folder (vscodeScripts): 307 files\n|      File types: py(82) js(21) txt(20) html(17) DS_Store(15) pyc(15) xml(11)\n|                  css(11) json(9) yml(5)\n|      Conf files: settings.json(2) launch.json(1) tasks.json(1)\n|                  package.json(1)\}
+
+
+GA_1 question 2:
+
+curl -X POST "http://localhost:8000/api/" \
+>   -H "Content-Type: multipart/form-data" \
+>   -F "question=Running uv run --with httpie -- https [URL] installs the Python package httpie and sends a HTTPS request to the URL. Send a HTTPS request to https://httpbin.org/get with the URL encoded parameter email set to 22f3000107@ds.study.iitm.ac.in What is the JSON output of the command? (Paste only the JSON body, not the headers)"
+{"answer":"{\n  \"args\": {\n    \"email\": \"22f3000107@ds.study.iitm.ac.in\"\n  },\n  \"headers\": {\n    \"Accept\": \"*/*\",\n    \"Accept-Encoding\": \"gzip, deflate\",\n    \"Host\": \"httpbin.org\",\n    \"User-Agent\": \"python-httpx/0.28.1\",\n    \"X-Amzn-Trace-Id\": \"Root=1-67ea6b1c-66bc44d96ec69e1b40416769\"\n  },\n  \"origin\": \"223.235.135.167\",\n  \"url\": \"https://httpbin.org/get?email=22f3000107%40ds.study.iitm.ac.in\"\n}"}
+
+GA_1 question 3:
+
+
+// GA_1 Ouestion 4:
+
+// curl -X POST "http://localhost:8000/api/" \
+//   -H "Content-Type: multipart/form-data" \
+//   -F "question=Let's make sure you can write formulas in Google Sheets. Type this formula into Google Sheets. (It won't work in Excel) =SUM(ARRAY_CONSTRAIN(SEQUENCE(100, 100, 10, 7), 1, 10)) What is the result?"
+
+{
+    "answer":"415"
+}
+
+GA_1 question5:
+curl -X POST "http://localhost:8000/api/" \
+>   -H "Content-Type: multipart/form-data" \
+>   -F "question=Let's make sure you can write formulas in Excel. Type this formula into Excel. Note: This will ONLY work in Office 365. =SUM(TAKE(SORTBY({6,3,2,3,11,0,9,15,1,14,15,13,3,14,11,8}, {10,9,13,2,11,8,16,14,7,15,5,4,6,1,3,12}), 1, 9)) What is the result?"
+{"answer":"128"}
+
+GA_1 question 7"
+curl -X POST "http://localhost:8000/api/" \
+>   -H "Content-Type: multipart/form-data" \
+>   -F "question=How many Wednesdays are there in the date range 1987-07-25 to 2009-05-19?"
+{"answer":"1138"}
+
+// question 8:
+// curl -X POST "http://localhost:8000/api/" \
+// >   -H "Content-Type: multipart/form-data" \
+// >   -F "question=Download and unzip file q-extract-csv-zip.zip which has a single extract.csv file inside. What is the value in the 'answer' column of the CSV file?" \
+// >   -F "file=@tests/q-extract-csv-zip.zip"
+{
+    "answer":"951dc"
+}
+
+GA_1 question 9:
+curl -X POST "http://localhost:8000/api/" \
+>   -H "Content-Type: multipart/form-data" \
+>   -F "question=Let's make sure you know how to use JSON. Sort this JSON array of objects by the value of the age field. In case of a tie, sort by the name field. Paste the resulting JSON below without any spaces or newlines. [{\"name\":\"Alice\",\"age\":98},{\"name\":\"Bob\",\"age\":85},{\"name\":\"Charlie\",\"age\":74},{\"name\":\"David\",\"age\":34},{\"name\":\"Emma\",\"age\":40},{\"name\":\"Frank\",\"age\":18},{\"name\":\"Grace\",\"age\":26},{\"name\":\"Henry\",\"age\":51},{\"name\":\"Ivy\",\"age\":24},{\"name\":\"Jack\",\"age\":16},{\"name\":\"Karen\",\"age\":5},{\"name\":\"Liam\",\"age\":73},{\"name\":\"Mary\",\"age\":77},{\"name\":\"Nora\",\"age\":71},{\"name\":\"Oscar\",\"age\":73},{\"name\":\"Paul\",\"age\":47}] Sorted JSON:"
+{"answer":"[{\"name\":\"Karen\",\"age\":5},{\"name\":\"Jack\",\"age\":16},{\"name\":\"Frank\",\"age\":18},{\"name\":\"Ivy\",\"age\":24},{\"name\":\"Grace\",\"age\":26},{\"name\":\"David\",\"age\":34},{\"name\":\"Emma\",\"age\":40},{\"name\":\"Paul\",\"age\":47},{\"name\":\"Henry\",\"age\":51},{\"name\":\"Nora\",\"age\":71},{\"name\":\"Liam\",\"age\":73},{\"name\":\"Oscar\",\"age\":73},{\"name\":\"Charlie\",\"age\":74},{\"name\":\"Mary\",\"age\":77},{\"name\":\"Bob\",\"age\":85},{\"name\":\"Alice\",\"age\":98}]"}
+
+GA_1 question 11:
+curl -X POST "http://localhost:8000/api/sum-data-values" \
+>      -H "Content-Type: application/x-www-form-urlencoded" \
+>      --data-urlencode "html=<div class='foo' data-value='50'></div><div class='foo' data-value='88'></div>"
+{"sum":138.0,"values":[50.0,88.0]}
+
+GA_1 question 12:
+curl -X POST "http://localhost:8000/api/" \
+>   -H "Content-Type: multipart/form-data" \
+>   -F "question=Download and process the files in q-unicode-data.zip which contains three files with different encodings: data1.csv (CP-1252), data2.csv (UTF-8), and data3.txt (UTF-16). Each file has 2 columns: symbol and value. Sum up all the values where the symbol matches ™ OR “ OR – across all three files. What is the sum of all values associated with these symbols?" \
+>   -F "file=@tests/q-unicode-data.zip"
+{"answer":"26533"}
